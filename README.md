@@ -20,3 +20,11 @@ It tracks memory usage over time, identifies abnormal growth, and provides easy-
 ### Python
 ```bash
 pip install memory-leak-logger
+
+FetchContent_Declare(
+  mll
+  GIT_REPOSITORY https://github.com/your-org/Memory-Leak-Logger.git
+  GIT_TAG v1.0.0
+)
+FetchContent_MakeAvailable(mll)
+target_link_libraries(your_target PRIVATE mll)
