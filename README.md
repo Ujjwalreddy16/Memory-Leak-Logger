@@ -1,8 +1,22 @@
-# SDEP_Project
-**Developed a Memory Leak Logger tool to detect, log, and trace memory leaks in software applications.**
+# Memory-Leak-Logger
 
-**Implemented automated monitoring of memory allocation/deallocation, helping developers identify inefficient memory usage.**
+A lightweight tool to detect and log memory leaks.  
+It tracks memory usage over time, identifies abnormal growth, and provides easy-to-read reports.
 
-**Designed detailed logging and reporting features, enabling faster debugging and performance optimization.**
+---
 
-**Integrated with C/C++ runtime environments for real-time leak detection, reducing debugging time and improving software reliability.**
+## ✨ Features
+- Detects potential memory leaks by monitoring process memory.
+- CLI and library usage.
+- Supports JSON, CSV, and NDJSON outputs.
+- Configurable sampling intervals.
+- CI/CD friendly – fail builds on detected leaks.
+- Cross-platform (Linux, Windows, macOS).
+
+---
+
+## 📦 Installation
+
+### Python
+```bash
+pip install memory-leak-logger
