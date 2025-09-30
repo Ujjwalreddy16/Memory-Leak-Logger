@@ -42,3 +42,17 @@ for i in range(10000):
     data.append(bytearray(1024))
 
 logger.stop()
+
+#include <mll/mll.hpp>
+
+int main() {
+  mll::LeakLogger logger({.sample_interval = std::chrono::milliseconds(500),
+                          .output = "mll.csv"});
+  logger.start();
+
+  std::vector<std::unique_ptr<char[]>> blobs;
+  for (int i = 0; i < 10000; ++i)
+    blobs.emplace_back(std::make_unique<char[]>(1024));
+
+  logger.stop();
+}
