@@ -30,3 +30,15 @@ FetchContent_MakeAvailable(mll)
 target_link_libraries(your_target PRIVATE mll)
 # Monitor a Python script with 500ms sampling
 mll run --sample-interval 0.5s --output mll.json -- python app.py
+
+from mll import LeakLogger
+
+logger = LeakLogger(sample_interval="0.5s", output="mll.json")
+logger.start()
+
+# Your code...
+data = []
+for i in range(10000):
+    data.append(bytearray(1024))
+
+logger.stop()
