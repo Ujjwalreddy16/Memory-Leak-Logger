@@ -41,7 +41,7 @@ data = []
 for i in range(10000):
     data.append(bytearray(1024))
 
-logger.stop()
+logger.stop().
 
 #include <mll/mll.hpp>
 
